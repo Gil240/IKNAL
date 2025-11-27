@@ -7,73 +7,84 @@ const Features = () => {
       title: 'Búsqueda rápida y sencilla',
       subtitle: 'Encuentra lo que necesitas sin complicarte.',
       description: 'Explora productos disponibles en negocios locales y socios revendedores con solo unos clics. Nuestra plataforma identifica rápidamente quién lo tiene y te muestra opciones inmediatas cerca de ti.',
-      gridClass: 'md:col-span-1 md:row-span-1',
+      gradient: 'from-[#1BC8C0] to-[#16938E]',
+      iconBg: 'bg-[#1BC8C0]/10',
+      iconColor: 'text-[#1BC8C0]',
     },
     {
       icon: Truck,
       title: 'Entrega confiable',
       subtitle: 'Tu pedido, siempre en buenas manos.',
       description: 'Repartidores verificados recolectan tu compra directamente del socio local y la llevan a tu puerta. Cada entrega es rastreable y supervisada para garantizar seguridad y puntualidad.',
-      gridClass: 'md:col-span-1 md:row-span-1',
+      gradient: 'from-[#6C4DFF] to-[#8B73FE]',
+      iconBg: 'bg-[#6C4DFF]/10',
+      iconColor: 'text-[#6C4DFF]',
     },
     {
       icon: Tag,
       title: 'Precios accesibles',
       subtitle: 'Calidad local sin pagar de más.',
       description: 'Al eliminar intermediarios tradicionales, conectamos directamente a clientes con socios locales, permitiendo obtener mejores precios y opciones más cercanas sin costos ocultos.',
-      gridClass: 'md:col-span-1 md:row-span-1',
+      gradient: 'from-[#16938E] to-[#125E5C]',
+      iconBg: 'bg-[#16938E]/10',
+      iconColor: 'text-[#16938E]',
     },
     {
       icon: Heart,
       title: 'Impacto social',
       subtitle: 'Tu compra fortalece la economía de tu comunidad.',
       description: 'Cada pedido activa un ciclo económico positivo: genera ingresos para microempresas locales, crea oportunidades para repartidores y fomenta el crecimiento del comercio de barrio.',
-      gridClass: 'md:col-span-1 md:row-span-1',
+      gradient: 'from-[#8B73FE] to-[#615DF7]',
+      iconBg: 'bg-[#8B73FE]/10',
+      iconColor: 'text-[#8B73FE]',
     },
   ];
 
   return (
-    <section id="sobre-nosotros" className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="sobre-nosotros" className="py-24 md:py-32 bg-[#E9EFF1]/30">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900">
+        <div className="text-center mb-16 md:mb-20">
+          <span className="inline-block px-4 py-2 bg-[#BAE8E7]/30 text-[#125E5C] text-sm font-semibold rounded-full mb-6">
+            Nuestras Ventajas
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0C3130] tracking-tight">
             ¿Por qué los clientes nos eligen?
           </h2>
-          <p className="mt-4 text-lg md:text-xl text-secondary-600 max-w-2xl mx-auto">
+          <p className="mt-5 text-lg md:text-xl text-[#0C3130]/60 max-w-2xl mx-auto">
             Mira cómo transformamos tu forma de comprar.
           </p>
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`${feature.gridClass} group bg-gradient-to-br from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-100 hover:border-primary-200 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10`}
+              className="group bg-white rounded-3xl p-8 md:p-10 border border-[#E9EFF1] hover:border-[#BAE8E7] transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(12,49,48,0.12)]"
             >
               <div className="flex flex-col h-full">
                 {/* Icon */}
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors duration-300">
-                  <feature.icon className="w-6 h-6 md:w-7 md:h-7 text-primary-600" />
+                <div className={`w-14 h-14 ${feature.iconBg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <feature.icon className={`w-7 h-7 ${feature.iconColor}`} />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl md:text-2xl font-bold text-secondary-900 mb-2">
+                <h3 className="text-xl md:text-2xl font-bold text-[#0C3130] mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-primary-600 font-medium mb-3">
+                <p className={`font-medium mb-4 bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
                   {feature.subtitle}
                 </p>
-                <p className="text-secondary-600 text-sm md:text-base flex-grow">
+                <p className="text-[#0C3130]/60 text-[15px] leading-relaxed flex-grow">
                   {feature.description}
                 </p>
 
                 {/* Image Placeholder */}
-                <div className="mt-6 bg-white rounded-xl border-2 border-dashed border-gray-200 p-4 flex items-center justify-center min-h-[120px]">
+                <div className="mt-8 bg-gradient-to-br from-[#E9EFF1]/50 to-[#BAE8E7]/20 rounded-2xl p-6 flex items-center justify-center min-h-[140px] border border-dashed border-[#BAE8E7]/50">
                   <div className="text-center">
-                    <Smartphone className="w-8 h-8 text-gray-300 mx-auto mb-2" />
-                    <p className="text-gray-400 text-sm">Agregar captura aquí</p>
+                    <Smartphone className="w-10 h-10 text-[#16938E]/40 mx-auto mb-3" />
+                    <p className="text-[#0C3130]/40 text-sm font-medium">Agregar captura aquí</p>
                   </div>
                 </div>
               </div>
